@@ -40,26 +40,48 @@ CREATE TABLE Treatments (
 -- DATA INSERTION
 -- =========================
 
+-- Patients Table Data
 INSERT INTO Patients VALUES
 (1, 'Amit', 25, 'Male'),
 (2, 'Sneha', 30, 'Female'),
-(3, 'Rahul', 40, 'Male');
+(3, 'Rahul', 40, 'Male'),
+(4, 'Priya', 28, 'Female'),
+(5, 'Karan', 35, 'Male'),
+(6, 'Anjali', 22, 'Female'),
+(7, 'Vikram', 50, 'Male');
 
+-- Doctors Table Data
 INSERT INTO Doctors VALUES
 (101, 'Dr. Sharma', 'Cardiology'),
-(102, 'Dr. Mehta', 'Dermatology');
+(102, 'Dr. Mehta', 'Dermatology'),
+(103, 'Dr. Reddy', 'Orthopedics'),
+(104, 'Dr. Patel', 'Neurology'),
+(105, 'Dr. Verma', 'Pediatrics'),
+(106, 'Dr. Iyer', 'General Medicine'),
+(107, 'Dr. Khan', 'ENT');
 
+-- Appointments Table Data
 INSERT INTO Appointments VALUES
 (1001, 1, 101, '2026-04-01'),
-(1002, 2, 101, '2026-04-02'),
-(1003, 3, 102, '2026-04-03'),
-(1004, 1, 102, '2026-04-04');
+(1002, 2, 101, '2026-04-15'),
+(1003, 3, 102, '2026-05-03'),
+(1004, 1, 102, '2026-05-10'),
+(1005, 4, 103, '2026-05-20'),
+(1006, 5, 104, '2026-06-06'),
+(1007, 6, 105, '2026-06-14'),
+(1008, 7, 106, '2026-07-08'),
+(1009, 2, 107, '2026-07-18');
 
+-- Treatments Table Data
 INSERT INTO Treatments VALUES
 (2001, 1, 'Flu', 500, '2026-04-01'),
-(2002, 2, 'Heart Disease', 5000, '2026-04-02'),
-(2003, 3, 'Skin Allergy', 1500, '2026-04-03'),
-(2004, 1, 'Flu', 700, '2026-04-05');
+(2002, 2, 'Heart Disease', 5000, '2026-04-15'),
+(2003, 3, 'Skin Allergy', 1500, '2026-05-03'),
+(2004, 1, 'Flu', 700, '2026-05-10'),
+(2005, 4, 'Fracture', 3500, '2026-05-20'),
+(2006, 5, 'Migraine', 2000, '2026-06-06'),
+(2007, 6, 'Fever', 800, '2026-06-14'),
+(2008, 7, 'Ear Infection', 1200, '2026-07-08');
 
 -- =========================
 -- QUERIES / ANALYSIS
@@ -86,7 +108,7 @@ ORDER BY year, month;
 
 -- 3. Most Common Disease
 SELECT 
-    diagnosis, 
+    diagnosis,
     COUNT(*) AS cases
 FROM Treatments
 GROUP BY diagnosis
